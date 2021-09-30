@@ -1,0 +1,173 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+<style>
+.node
+{
+    padding-left: 20px;
+    display: block;
+}
+
+.node_collapsed
+{
+    padding-left: 20px;
+    display: none;
+
+    
+    visibility: hidden;
+    display: none;
+}
+
+
+
+a:active
+{
+text-decoration:none;
+color: #0000FF;
+font-weight: bold;
+}
+
+a:visited
+{
+text-decoration:none;
+color: #000;
+font-weight: bold;
+}
+
+a:link
+{
+text-decoration:none;
+color: #000;
+font-weight: bold;
+}
+
+a:hover
+{
+text-decoration: underline;
+color: #500;
+font-weight: bold;
+}
+
+</style>
+
+
+<script language="javascript">
+  
+    var displayStates = [];
+
+    function showDiv(div)
+    {    
+        div.style.height     = "";
+        div.style.display    = "block";
+        div.style.visibility = "visible";
+    }
+
+    function hideDiv(div)
+    {
+        div.style.height     = "0px";
+        div.style.display    = "none";      
+        div.style.visibility = "hidden";
+    }
+
+    function toggleDiv(div, defaultState)
+    {
+
+        // set default on first use
+        if (displayStates[div] == undefined)
+            displayStates[div] = defaultState;
+
+        // toggle state
+        displayStates[div] = !displayStates[div];       
+
+        // hide / show
+        if (displayStates[div])
+            showDiv(div);
+        else {
+            hideDiv(div);
+        }
+    }
+
+    function toggleDivName(divname, defaultState)
+    {
+        toggleDiv(document.getElementById(divname), defaultState);
+    }
+
+</script>
+
+<nobr><tt><a href='javascript: toggleDivName("ff4f6e80-afcc-441f-b2d9-fdc36dc4fc5b", true)'>+</a>&nbsp;</tt>tcm</nobr><br/>
+<div id='ff4f6e80-afcc-441f-b2d9-fdc36dc4fc5b' class='node'><nobr><tt><a href='javascript: toggleDivName("b6061a10-d7d3-4c59-adce-4f89e07d5922", false)'>+</a>&nbsp;</tt>Networking Refresher</nobr><br/>
+<div id='b6061a10-d7d3-4c59-adce-4f89e07d5922' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='networking%20refresher/mac%20address/page.html' target='viewer'>MAC address</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking%20refresher/osi%20model/page.html' target='viewer'>OSI model</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking%20refresher/subnetting/page.html' target='viewer'>subnetting</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking%20refresher/port%20and%20protocal/page.html' target='viewer'>port and protocal</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='networking%20refresher/ip%20address/page.html' target='viewer'>ip address</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("a4359a5d-b4d4-4b39-b4ee-0c76f6ec3855", false)'>+</a>&nbsp;</tt>introduction to kali</nobr><br/>
+<div id='a4359a5d-b4d4-4b39-b4ee-0c76f6ec3855' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='introduction%20to%20kali/sudo%20command/page.html' target='viewer'>sudo command</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='introduction%20to%20kali/basic%20commands/page.html' target='viewer'>basic commands</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='introduction%20to%20kali/user%20privallage/page.html' target='viewer'>user privallage</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='introduction%20to%20kali/common%20network%20command/page.html' target='viewer'>common network command</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='introduction%20to%20kali/network%20command%20update/page.html' target='viewer'>network command update</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='introduction%20to%20kali/installing%20and%20updating%20tools/page.html' target='viewer'>installing and updating tools</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='introduction%20to%20kali/scripting%20with%20bash/page.html' target='viewer'>scripting with bash</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("6927baef-c3ef-4552-a2fe-816cdc04b8cd", false)'>+</a>&nbsp;</tt>introduction to python</nobr><br/>
+<div id='6927baef-c3ef-4552-a2fe-816cdc04b8cd' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='introduction%20to%20python/syllabus/page.html' target='viewer'>syllabus</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='introduction%20to%20python/string/page.html' target='viewer'>string</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='introduction%20to%20python/math/page.html' target='viewer'>math</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='introduction%20to%20python/variable%20and%20method/page.html' target='viewer'>variable and method</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='introduction%20to%20python/function/page.html' target='viewer'>function</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='introduction%20to%20python/boolen%20expression/page.html' target='viewer'>boolen expression</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='introduction%20to%20python/relation%20and%20boolen%20opertaor/page.html' target='viewer'>relation and boolen opertaor</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='introduction%20to%20python/conditional%20statement/page.html' target='viewer'>conditional statement</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='introduction%20to%20python/lists%20and%20tuple/page.html' target='viewer'>lists and tuple</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='introduction%20to%20python/looping/page.html' target='viewer'>looping</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='introduction%20to%20python/importing%20module/page.html' target='viewer'>importing module</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='introduction%20to%20python/advanced%20string/page.html' target='viewer'>advanced string</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='introduction%20to%20python/dictinoary/page.html' target='viewer'>dictinoary</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='introduction%20to%20python/socket/page.html' target='viewer'>socket</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='introduction%20to%20python/port%20scanner/page.html' target='viewer'>port scanner</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("9a56f77f-dfe7-4f48-8b7b-652634fa689f", true)'>+</a>&nbsp;</tt>information gathering</nobr><br/>
+<div id='9a56f77f-dfe7-4f48-8b7b-652634fa689f' class='node'><nobr><tt>&nbsp;&nbsp;</tt><a href='information%20gathering/stage%20of%20ethical%20hacking/page.html' target='viewer'>stage of ethical hacking</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='information%20gathering/identifying%20target/page.html' target='viewer'>identifying target</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='information%20gathering/gathering%20breach%20credentials%20breach%20par/page.html' target='viewer'> gathering breach credentials breach parse</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='information%20gathering/hunting%20breach%20credential%20with%20dehashed/page.html' target='viewer'>hunting breach credential with Dehashed</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='information%20gathering/hunting%20subdomain/page.html' target='viewer'>hunting subdomain</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='information%20gathering/discovering%20e%20mail%20address/page.html' target='viewer'>discovering e mail address</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='information%20gathering/identfy%20web%20technology/page.html' target='viewer'>identfy web technology</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='information%20gathering/information%20gethering%20with%20burpsuite/page.html' target='viewer'>information gethering with burpsuite</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='information%20gathering/google%20fu/page.html' target='viewer'>google fu</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("902f066e-f9a7-4b33-8967-cd002bf55134", true)'>+</a>&nbsp;</tt>scanning and enumeration</nobr><br/>
+<div id='902f066e-f9a7-4b33-8967-cd002bf55134' class='node'><nobr><tt>&nbsp;&nbsp;</tt><a href='scanning%20and%20enumeration/installing%20kioptrix/page.html' target='viewer'>installing kioptrix</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='scanning%20and%20enumeration/scanning%20with%20nmap/page.html' target='viewer'>scanning with nmap </a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='scanning%20and%20enumeration/enumerating%20http%20and%20https/page.html' target='viewer'>enumerating HTTP and HTTPS</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='scanning%20and%20enumeration/enumerating%20smb/page.html' target='viewer'>enumerating smb </a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='scanning%20and%20enumeration/enumerating%20ssh/page.html' target='viewer'>enumerating ssh</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='scanning%20and%20enumeration/research%20potential%20vulnerability/page.html' target='viewer'>research potential vulnerability</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("ca4e4360-05fb-4c01-95ae-3ab30bc4f93b", false)'>+</a>&nbsp;</tt>scanning with nessus</nobr><br/>
+<div id='ca4e4360-05fb-4c01-95ae-3ab30bc4f93b' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='scanning%20with%20nessus/nessus/page.html' target='viewer'>nessus</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("5d1dbc70-457a-488b-81a4-bea103cac0ef", true)'>+</a>&nbsp;</tt>exploitation basic</nobr><br/>
+<div id='5d1dbc70-457a-488b-81a4-bea103cac0ef' class='node'><nobr><tt>&nbsp;&nbsp;</tt><a href='exploitation%20basic/reverse%20shell%20and%20bind%20shell/page.html' target='viewer'>reverse shell and bind shell</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='exploitation%20basic/staged%20and%20non%20staged%20payload/page.html' target='viewer'>staged and non staged payload</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='exploitation%20basic/gaining%20root%20with%20metasploit/page.html' target='viewer'>gaining root with metasploit</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='exploitation%20basic/manual%20exploitation/page.html' target='viewer'>manual exploitation</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='exploitation%20basic/brute%20force%20attack%20on%20ssh/page.html' target='viewer'>brute force attack on ssh</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt><a href='exploitation%20basic/credential%20spreadnig%20and%20passed%20stuffing/page.html' target='viewer'>credential spreadnig and passed stuffing</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("45c65925-592f-4fd2-9f04-7f5ed7e04f1a", true)'>+</a>&nbsp;</tt>machine exploitation report</nobr><br/>
+<div id='45c65925-592f-4fd2-9f04-7f5ed7e04f1a' class='node'><nobr><tt>&nbsp;&nbsp;</tt><a href='machine%20exploitation%20report/kioptrix/page.html' target='viewer'>kioptrix</a></nobr><br/>
+</div>
+<nobr><tt><a href='javascript: toggleDivName("11ad066e-8836-48f0-9908-860b9ebc795d", false)'>+</a>&nbsp;</tt><a href='trash' target='viewer'>Trash</a></nobr><br/>
+<div id='11ad066e-8836-48f0-9908-860b9ebc795d' class='node_collapsed'><nobr><tt>&nbsp;&nbsp;</tt><a href='trash/kioptrix/page.html' target='viewer'>kioptrix</a></nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt>New Folder</nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt>New Folder</nobr><br/>
+<nobr><tt>&nbsp;&nbsp;</tt>New Folder</nobr><br/>
+</div>
+</div>
+</body></html>

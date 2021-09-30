@@ -1,0 +1,31 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>MAC address</title>
+</head><body><br/>
+<span style="font-size: 11pt"><b>MAC Address :  select first 3 pair and search for &quot; mac address lookup &quot; on google . . first 3 pair are indentifier they give info about MAC address's device </b></span><br/>
+<br/>
+<br/>
+<img src="image.png"/><br/>
+<br/>
+<br/>
+<br/>
+<span style="font-size: 12pt"><b>=&gt; To open wire shark : wireshark&amp;</b></span><br/>
+           <br/>
+              <img src="image 2.png"/><br/>
+<br/>
+<span style="font-size: 13pt">it will open wire shark GUI.<br/>
+1. click on start capturing data.<br/>
+  we see some UDP protocal data.<br/>
+2. search google.com to see TCP protocal data<br/>
+<br/>
+Now, ouur source address is 192.168.57.139 and destination is 74.125.21.155<br/>
+  -&gt; our source send SYN request to destination with port 52610 --&gt; 443 to connect over TCP<br/>
+  -&gt; if port 443 is open and available for connection then ,desination send SYN ACK to source .<br/>
+  -&gt; source send ACK packet back to confirm connection .<br/>
+i.e. 3 way handshake .<br/>
+<br/>
+</span><img src="image 3.png"/><br/>
+<br/>
+<br/>
+</body></html>

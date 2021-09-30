@@ -1,0 +1,75 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>enumerating HTTP and HTTPS</title>
+</head><body><span style="font-size: 13pt">port 80 : http<br/>
+port 443 : https<br/>
+<br/>
+our koiptric machine ip address : 192.168.57.134<br/>
+1. search on google <br/>
+	http:// [target ip address]<br/>
+	https:// [target ip address]<br/>
+default page give us some info <br/>
+</span><img height="339" src="image.png" width="850"/><br/>
+<span style="font-size: 14pt">as we can see on this default webpage we have some links <br/>
+</span><span style="font-size: 14pt">so walk through all links and use wappalyzer on each web page so we can get more info .</span><img src="image 2.png"/>\<br/>
+<span style="font-size: 13pt"><b>apache 1.3.20 at 443<br/>
+php<br/>
+host name : kioptrix level1<br/>
+smb2 (version 2)<br/>
+<br/>
+</b>Now we use one more tool : NIKTO<br/>
+<br/>
+<b>nikto</b>: it is web vulnerability scanner . it is begineer friendly tool . when we pratcing against phunehub or on CTF .<ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><b>but </b> if website has good security then website automaticaly block nikto scan . </li>
+<li style="list-style-type: none"/>
+</ul>
+</li>
+<li style="list-style-type: none">nikto -h https://192.168.57.134</li>
+<li style="list-style-type: none">     and try</li>
+</ul>
+   nikto -h http://192.168.57.134<br/>
+<img height="434" src="image 3.png" width="900"/><br/>
+this gives protection header information <br/>
+<img height="57" src="image 7.png" width="900"/><br/>
+<span style="font-size: 14pt">this show list of outdated version</span><br/>
+<img height="47" src="image 4.png" width="900"/><br/>
+this shows which version is vulnerable to which kind of attack<br/>
+<img height="103" src="image 5.png" width="900"/><br/>
+this shows allowed HTTP methods [ <b>TRACE</b>method is active ]<br/>
+<img height="47" src="image 6.png" width="900"/><br/>
+</span><br/>
+<span style="font-size: 14pt">we have some more tools like<br/>
+dirbuster<br/>
+dirb<br/>
+gobuster<br/>
+<br/>
+now, we are going to use one more tool<br/>
+dirbuster: this is web application brute force <br/>
+in terminal<ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><b><li style="list-style-type: none">dirbuster&amp;</li>
+</b></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+it open a new window <br/>
+         <img src="image 8.png"/><br/>
+enter target address <br/>
+give brute force list path : usr/shr/wordlist/dirbuster/directory-list-2.3-small.txt<br/>
+file extension : php,txt,doc,pdf,xlx,etc file type<br/>
+and start scan <br/>
+<br/>
+our scan depends on <ul><li style="list-style-type: none">wordlist size</li>
+<li style="list-style-type: none">option to scan</li>
+<li style="list-style-type: none">how website is cooperating</li>
+<li style="list-style-type: none"/>
+</ul>
+as output <br/>
+<img src="image 9.png"/><br/>
+this tool give directory structure format along with response code and response size <br/>
+if response code or response size have high vaariation then we need to dig it more to get info <br/>
+<br/>
+</span><br/>
+<br/>
+</body></html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>user privallage</title>
+</head><body><span style="font-size: 14pt">if we want to perform pentest in system then we need full acces . for this many time we use temp folder to upload exploite . because tmp has all RWX permission ,so we can those file .<br/>
+also we are looking for file with RWX permission and we need to modify them to give us root acess to system.<br/>
+note : it is all about insecure configuration of system. <br/>
+<img src="image 6.png"/><br/>
+<br/>
+as we already know script only run if they have full acess , so we can give them access by using <b>chmod command</b><br/>
+<br/>
+<br/>
+</span><span style="font-size: 14pt">to create new user ( but this user has less privallage than root)</span><br/>
+<br/>
+<img src="image 2.png"/><br/>
+<br/>
+<br/>
+<span style="font-size: 14pt">/etc/passwd file show all user . we can see here john also . this file also give some info regarding user congfiguration .</span><br/>
+<br/>
+<img src="image 3.png"/><br/>
+<br/>
+<span style="font-size: 14pt">/etc/shadow file contain user and password in hashed format . some time to enter in sysytem we an use this file . if password is weak than we can decode this hash to get password ..</span><br/>
+<br/>
+<img src="image 4.png"/><br/>
+<br/>
+<img src="image 5.png"/><br/>
+<br/>
+<span style="font-size: 14pt">as we can see john has less privallage , so it can't use sudo as super user . we can't chnage password of root by using john but we can change password of john by root .<br/>
+we use <b>su </b>commad to switch user . <br/>
+<br/>
+</span><span style="font-size: 14pt">{ note : if you are not root user then there are less chance of breakin . }</span><br/>
+<br/>
+<img src="image.png"/></body></html>

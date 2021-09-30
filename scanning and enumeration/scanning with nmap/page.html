@@ -1,0 +1,101 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>scanning with nmap </title>
+</head><body><span style="font-size: 14pt">now our first objective is to find IP address of kioptrix <br/>
+so for this we have two method<br/>
+1. by running kioptrix machine , login as john / TwoCows2 and write following command<br/>
+<br/>
+	ping 8.8.8.8 <br/>
+it will show kioptrix IP address as ping response. which may be 192.168.35.129/192.168.45.125/or any other IP<br/>
+</span><img src="image.png"/><br/>
+<span style="font-size: 14pt">here date is diffrent so IP may change </span><br/>
+<br/>
+<img src="image 2.png"/><br/>
+<span style="font-size: 14pt">here we got ping response from 192.168.4.53 so this is our machine IP address . IP address may be changed .<br/>
+<br/>
+for this whole section we are using kioptrix IP address as : <br/>
+</span><br/>
+<span style="font-size: 14pt"><br/>
+<br/>
+2. by using kali linux :<br/>
+<br/>
+firstly find your kali machin ip address by : </span><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><span style="font-size: 14pt"><li style="list-style-type: none">ifconfig</li>
+</span></ul>
+</li>
+</ul>
+</li>
+</ul>
+<img src="image 3.png"/><br/>
+<br/>
+<span style="font-size: 14pt">now use arp scan to list out all machine in our network <br/>
+</span><img src="image 4.png"/><br/>
+<br/>
+<br/>
+<span style="font-size: 14pt">here is the intresting thing <br/>
+our kali machine IP address is : 192.168.4.51<br/>
+and <br/>
+by arp scanner we find our kioptrix machine IP address is : 192.168.4.53<br/>
+they are very near to each other &quot; so we need to search only nearby IP address of our machine address &quot;<br/>
+<br/>
+we have one more method to find all Machine IP address in our network <br/>
+<b>NOTE : this method is tried on diffrent time so IP of Kali And Kioptrix is change but they are nearby to each other <br/>
+<br/>
+</b>3. by<b/>Netdiscover tool : <br/>
+firstly find kali machine IP address by ifconfig<br/>
+<img src="image 5.png"/><b><br/>
+</b><b>now <br/>
+</b>use net discover tool <br/>
+<img src="image 6.png"/><br/>
+hit enter<br/>
+<img src="image 7.png"/><br/>
+now as we know Kioptrix IP addres is neraby to our kali ip address <br/>
+so <br/>
+kioptrix IP address is : 192.168.57.134<br/>
+<br/>
+these are 3 method to find IP address of machine installed on our system by using kali and by itself .<br/>
+<br/>
+<span style="font-size: 16pt">now as we know IP address of kioptrix ,we use Nmap tool<br/>
+</span><br/>
+nmap: this is built in tool in kali linux , it is used for mapping of port , it perform SS(steatlh scanning) :<br/>
+=&gt; in normal TCP connection <ul><li style="list-style-type: none"><ul><li style="list-style-type: none">we send connection request</li>
+<li style="list-style-type: none">we recive ack</li>
+<li style="list-style-type: none">we make connection</li>
+</ul>
+</li>
+</ul>
+but in this case <ul><li style="list-style-type: none"><ul><li style="list-style-type: none">we send connection request</li>
+<li style="list-style-type: none">we recive ack</li>
+<li style="list-style-type: none">but we didnot make coonnection and and RESET, because we only want to know which port of Target machine is open and what service it is providing </li>
+</ul>
+</li>
+</ul>
+that is known as stealth scanning <br/>
+# for TCP scanning<br/>
+<img src="image 8.png"/><br/>
+in this command<br/>
+-T4 : for speed purpose (1 - 5) , 1 is very slow and 5 is very fast , 4 is moderate<br/>
+-p- : for all port(0-65535) ,<br/>
+-p : first common 1000 port ,<br/>
+-p 80,443,8080 : for specific port<br/>
+-A : all information (like OS, version,Open port, Service running etc.) <br/>
+and at last we give Target machine IP address<br/>
+# for UDP scanning <br/>
+<img src="image 9.png"/><b><br/>
+</b>here <br/>
+sU: for UDP mode <br/>
+-p: for first 1000 common port , because UDP is connection less protocol so it take very much time for all port scannnig , so we only give most common 1000 port for scaning .<br/>
+<br/>
+now result of TCP scanng:<br/>
+</span><img height="596" src="image 10.png" width="1000"/><br/>
+<img height="391" src="image 11.png" width="1000"/><br/>
+<span style="font-size: 14pt">it show open port with associated service :<br/>
+we can see here <br/>
+port<b>22 </b>: open : TCP :ssh : <b>ssh version 2.9p2</b><br/>
+</span><span style="font-size: 14pt">port <b>80 </b>; open : TCP :http : <b>apache version 1.3.20</b></span><br/>
+<span style="font-size: 14pt">port <b>111 </b>: open : TCP : rpcbind<br/>
+port <b>139</b>: open : TCP : netbios-ssn : samba<b>smbd</b><br/>
+</span><span style="font-size: 14pt">port <b>443</b>:open :TCP : ssl/https  , <b>mod_ssl/2.8.4 , openssl 0.9.6b</b></span><br/>
+<span style="font-size: 14pt">also it give OS information <b>LINUX 2.4.X</b></span><br/>
+<br/>
+</body></html>

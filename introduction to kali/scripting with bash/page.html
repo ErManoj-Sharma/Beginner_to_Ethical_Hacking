@@ -1,0 +1,104 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>scripting with bash</title>
+</head><body><span style="font-size: 12pt">to get our ip address , run </span><ul><li style="list-style-type: none"><ul><span style="font-size: 14pt"><li style="list-style-type: none">ifconfig</li>
+</span></ul>
+</li>
+</ul>
+<br/>
+<span style="font-size: 12pt">now , our objective is to find device in our network 192.168.57.150<br/>
+</span><span style="font-size: 12pt">for this let we ping an IP adress 192.164.4.29 or we can ping 192.168.57.1</span><br/>
+<img src="image.png"/><br/>
+<span style="font-size: 12pt"><br/>
+</span><span style="font-size: 12pt">ping for 192.168.4.29</span><br/>
+<img src="image 2.png"/><br/>
+<span style="font-size: 12pt"><br/>
+</span><span style="font-size: 12pt">ping 192.168.57.1</span><br/>
+<img src="image 3.png"/><br/>
+<br/>
+<span style="font-size: 12pt">when we ping any active address we got som response of 64 bytes data form that ip address<br/>
+<br/>
+note : if we try to ping inactive addrss then we didn't got any response . [ <b>here -c 1 means count only 1 , it means we ping this ip address only once</b>. because to check whether ip address us response or not 1 ping is enough , we don't need to ping endless.. ]<br/>
+<img src="image 4.png"/><br/>
+<br/>
+save ip adress who give us response back by <ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 14pt">ping 192.168.4.29 -c 1 &gt;ip.txt</span></li>
+</ul>
+</li>
+</ul>
+<img src="image 5.png"/><br/>
+<br/>
+now , we are going to extract ping response <br/>
+<img src="image 6.png"/><br/>
+<br/>
+we only want to get ip with 64bytes response<ul><li style="list-style-type: none"><ul><span style="font-size: 14pt"><li style="list-style-type: none">cat ip.txt | grep &quot;64bytes&quot;</li>
+</span></ul>
+</li>
+<li style="list-style-type: none">grep : this coomand search for pattern , word , text, in file and bunch of file </li>
+</ul>
+<img src="image 7.png"/><br/>
+now we need to cut this string to get ip address only <br/>
+so for this we add <ul><li style="list-style-type: none"><ul><span style="font-size: 14pt"><li style="list-style-type: none">cat ip.txt | grep &quot;64bytes&quot;|cut -d &quot; &quot; -f 4</li>
+</span></ul>
+</li>
+</ul>
+cut -d( delemeter ) &quot; &quot;( space) -f ( count up to )4<br/>
+* so it cut up to space till 4 place<br/>
+<img src="image 8.png"/><br/>
+<br/>
+now only ( : ) is left after ip address , so for this we use <ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 14pt">cat ip.txt | grep &quot;64bytes&quot;|cut -d &quot; &quot; -f 4|tr -d &quot; : &quot;</span></li>
+</ul>
+</li>
+</ul>
+<img src="image 9.png"/><br/>
+<br/>
+it is all process of extracting ip address from ping response but for large scale it is not pratically good pratice to extract each ip response <br/>
+so for that purpose we write a script <br/>
+<br/>
+&gt; create a file named ipsweep.sh <br/>
+&gt;paste this code <br/>
+&gt; give execute permission to file if it has not , by using chmod +x ipsweep.sh<br/>
+then execute this file by <ul><li style="list-style-type: none"><ul><span style="font-size: 14pt"><li style="list-style-type: none">./ipsweep.sh [ __.___.___ ]</li>
+</span></ul>
+</li>
+</ul>
+note : if we do not give ip with file then it will search for all possible ip address . which is resourse wastage and time comsuming .<br/>
+<img src="image 10.png"/><br/>
+=&gt; this shell script will show all ip address present in our network . <br/>
+{ DECODE : <br/>
+IMP: here $1 give us feature to give input with execution of file (refer from shell scripting lession ) <br/>
+here in this script <br/>
+&gt; we have a loop for ip which range is from 1 to 254 (as we know ip's 1 octant can vary upto 1-254 ).<br/>
+&gt; for this variable value of ip this script will perform <br/>
+{   1. ping once the ip address<ul><li style="list-style-type: none">2. search for 64 byte response .</li>
+<li style="list-style-type: none">3. cut unnessary string from ping response .</li>
+<li style="list-style-type: none">4. remove (:) symbol from the end of ip.</li>
+</ul>
+}<br/>
+and the end of script <br/>
+}<br/>
+<br/>
+so the modfied version of this script <br/>
+<img height="205" src="image 11.png" width="550"/><img height="217" src="image 12.png" width="550"/><br/>
+<br/>
+here we can see 1 minor difference in both script { &amp; ; }<br/>
+<span style="font-size: 14pt"><b>;</b>it will run script one instance at a time to speed is slow <br/>
+&amp; it will run script multiple instance at a time , so it works in speed.<br/>
+<br/>
+you can save output of script in file <br/>
+</span><span style="font-size: 14pt"><img src="image 13.png"/></span><br/>
+<br/>
+use of Nmap (intro : it is port scanning tool which is used to scan ip and it gives available port , state of port and what service associated with it)<br/>
+we learn Nmap in details later , it is just intro .<br/>
+<img src="image 14.png"/><br/>
+<br/>
+as we stored all response ip of our network in single text file so we can search for their port with n map in just one command <br/>
+<br/>
+note : at the palce of <span style="font-size: 14pt"><b>; </b></span>we can use <span style="font-size: 14pt"><b>&amp; . </b></span><br/>
+<img src="image 15.png"/><br/>
+<br/>
+end...<br/>
+<br/>
+<br/>
+<br/>
+</span></body></html>

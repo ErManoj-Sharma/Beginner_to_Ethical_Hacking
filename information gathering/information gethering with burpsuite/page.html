@@ -1,0 +1,32 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>information gethering with burpsuite</title>
+</head><body><span style="font-size: 14pt">berpsuite : it is also called web proxy<br/>
+setup firefox to utilize burpsuite<br/>
+<br/>
+go to preference -&gt; network proxy <br/>
+select mannual<br/>
+ 	HTTPS proxy : 127.0.0.1<br/>
+    port : 8080<br/>
+   check the check box<br/>
+now on new tab <br/>
+https://burp<br/>
+allow ca certificate<br/>
+now click to ca and save the certificate<br/>
+<br/>
+now, in firefox setting -&gt; privacy and security<br/>
+go to down <br/>
+view certifcate<br/>
+import certifcate<br/>
+select cacert.der  open<br/>
+<br/>
+now we are all set to use burpsuite<br/>
+<br/>
+search tesla.com on and burpsuite will intercept all traffic for us then we can analyze it <br/>
+-&gt; we can see trafic all traffic<br/>
+-&gt; we can modify the traffic <br/>
+also it give many information as we request and get resopnse from server<br/>
+<img src="image.png"/>  <img src="image 2.png"/><br/>
+<img src="image 3.png"/><br/>
+</span></body></html>

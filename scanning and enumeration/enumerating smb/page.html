@@ -1,0 +1,48 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>enumerating smb </title>
+</head><body><span style="font-size: 14pt">port : 139 : file sharing <br/>
+now we use metasploit tool : it is exploit framework<br/>
+-&gt;msfconsole  <br/>
+</span><img src="image.png"/><br/>
+<span style="font-size: 14pt">-&gt; search smb<br/>
+it gives more than 150 module we need to select according to our requirment <br/>
+here we are scanning so we select <br/>
+auxiliary /scanner/smb/smb_version and it has no . 60 (no. may be changed )<br/>
+<br/>
+-&gt;use auxiliary /scanner/smb/smb_version <br/>
+or<br/>
+-&gt;use 60<br/>
+<br/>
+-&gt; info   : it gives little information about module <br/>
+</span><img height="444" src="image 2.png" width="750"/><br/>
+<span style="font-size: 14pt">as we can see in this table RHOST {i.e. target }</span><br/>
+<span style="font-size: 14pt">so <br/>
+-&gt;set RHOST 192.168.57.134 <br/>
+<br/>
+-&gt;run <br/>
+or                 ; to exploit module <br/>
+-&gt;exploit    <br/>
+<br/>
+</span><img src="image 3.png"/><br/>
+<br/>
+<b><span style="font-size: 14pt">Unix Samba 2.2.1a<br/>
+<br/>
+</span></b><span style="font-size: 14pt">now we are using one more tool<br/>
+open new tab in terminal <br/>
+smbclient -L \\\\192.168.57.134 or smbclient -L \\192.168.57.134<br/>
+here we see a error but dont' worry about it <br/>
+this asks for root password if you know password write password , ele hit enter<br/>
+</span><img height="327" src="image 4.png" width="900"/><br/>
+<span style="font-size: 14pt">as you can see we have two sharename IPC$ and ADMIN$<br/>
+try to login as admin<br/>
+error ; worng pass<br/>
+</span><img height="83" src="image 5.png" width="900"/><br/>
+<span style="font-size: 14pt">try to login as ipc<br/>
+</span><span style="font-size: 14pt">we success</span><br/>
+<img height="415" src="image 6.png" width="900"/><br/>
+<span style="font-size: 14pt">but when we try to list out <br/>
+</span><img src="image 7.png"/><span style="font-size: 14pt"><br/>
+</span><span style="font-size: 14pt"><br/>
+it shows access denied , here wwe are dead end.</span></body></html>
